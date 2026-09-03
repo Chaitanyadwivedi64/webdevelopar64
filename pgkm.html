@@ -4,226 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PGKM SCHOOL</title>
-    <style>
-        /* --- Uiverse.io Terminal Loader Styles --- */
-        @keyframes blinkCursor {
-            50% { border-right-color: transparent; }
-        }
+<link rel="stylesheet"
+ href="C:\Users\Student\Documents\.css">
 
-        @keyframes typeAndDelete {
-            0%, 10% { width: 0; }
-            45%, 55% { width: 10em; } 
-            90%, 100% { width: 0; }
-        }
-
-        .terminal-loader {
-            border: 0.1em solid #333;
-            background-color: #1a1a1a;
-            color: #0f0;
-            font-family: "Courier New", Courier, monospace;
-            font-size: 1em;
-            padding: 1.5em 1em;
-            width: 12em;
-            margin: 30px auto; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-            box-sizing: border-box;
-            text-align: left; 
-        }
-
-        .terminal-header {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1.5em;
-            background-color: #333;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            padding: 0 0.4em;
-            box-sizing: border-box;
-        }
-
-        .terminal-controls { float: right; }
-
-        .control {
-            display: inline-block;
-            width: 0.6em; height: 0.6em;
-            margin-left: 0.4em;
-            border-radius: 50%;
-            background-color: #777;
-        }
-        .control.close { background-color: #e33; }
-        .control.minimize { background-color: #ee0; }
-        .control.maximize { background-color: #0b0; }
-
-        .terminal-title {
-            float: left;
-            line-height: 1.5em;
-            color: #eee;
-            font-size: 0.8em;
-        }
-
-        .text {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 0.2em solid green; 
-            animation: typeAndDelete 4s steps(11) infinite,
-                       blinkCursor 0.5s step-end infinite alternate;
-            margin-top: 1.5em;
-        }
-
-        /* --- Global Reset & Background Styling --- */
-        @keyframes shadow-pop-tr {
-            0% {
-                box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
-                transform: translateX(0) translateY(0);
-            }
-            100% {
-                box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e;
-                transform: translateX(-8px) translateY(8px);
-            }
-        }
-
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            color: #ffffff;
-            background-color: #001f3f;
-            overflow-x: hidden;
-            min-height: 100vh;
-            padding-top: 80px; 
-        }
-
-        /* --- School Navigation Bar --- */
-        .navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            height: 70px;
-            background: rgba(15, 15, 15, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-        }
-
-        .nav-logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-item a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-item a:hover {
-            color: #FCB216;
-        }
-
-        .nav-cta {
-            background-color: #FCB216;
-            color: #000000 !important;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 600 !important;
-            transition: transform 0.2s ease, background-color 0.3s ease !important;
-        }
-
-        .nav-cta:hover {
-            background-color: #e59d0b !important;
-            transform: translateY(-1px);
-        }
-
-        /* --- School Main Banner Image Style --- */
-        .school-banner-container {
-            max-width: 600px;
-            margin: 2rem auto 1rem auto;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .school-banner-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* --- Moving Dots Canvas Background --- */
-        #particle-canvas {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* --- Main Content Layout --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero {
-            text-align: center;
-            background: rgba(15, 15, 15, 0.75);
-            padding: 4rem 2rem;
-            border-radius: 24px;
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-        }
-
-        h1 { 
-            font-size: 3rem; 
-            margin-bottom: 0.5rem; 
-        }
-
-        .main-btn { 
-            display: inline-block;
-            margin-top: 1.5rem;
-            border: 2px solid #FCB216; 
-            color: #FCB216; 
-            padding: 0.5rem 1rem; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        .main-btn:hover {
-            background-color: #FCB216;
-            color: #000;
-        }
-    </style>
 </head>
 <body>
 
@@ -231,12 +14,13 @@
     <nav class="navbar">
         <a href="#" class="nav-logo">PGKM</a>
         <ul class="nav-menu">
-            <li class="nav-item"><a href="#home">Home</a></li>
-            <li class="nav-item"><a href="#about">About Us</a></li>
-            <li class="nav-item"><a href="#academics">Academics</a></li>
-            <li class="nav-item"><a href="#gallery">Gallery</a></li>
-            <li class="nav-item"><a href="#contact">Contact</a></li>
-            <li class="nav-item"><a href="#admissions" class="nav-cta">Apply Now</a></li>
+            <li class="nav-item"><a href="C:\Users\Student\Documents\pgkm.html">Home</a></li>
+
+            <li class="nav-item"><a href="C:\Users\Student\Documents\aboutus.htm">About Us</a></li>
+            <li class="nav-item"><a href="C:\Users\Student\Documents\academics.html">Academics</a></li>
+
+            <li class="nav-item"><a href="C:\Users\Student\Documents\contact.html">Contact</a></li>
+
         </ul>
     </nav>
 
@@ -249,21 +33,10 @@
             
             <!-- Real School Image Integration -->
             <div class="school-banner-container">
-                <img class="school-banner-img" src="data:image/jpeg;base64,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" alt="PGKM School Haribhai Desai Vidyadham">
+                <img class="school-banner-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xufZPA_FyYjtKkGPEuUvz2PMzD94EASPEcUhxjRfyg&s=10" alt="PGKM School Haribhai Desai Vidyadham">
             </div>
             
-            <!-- Integrated Uiverse Terminal Loader -->
-            <div class="terminal-loader">
-                <div class="terminal-header">
-                    <div class="terminal-title">Status</div>
-                    <div class="terminal-controls">
-                        <div class="control close"></div>
-                        <div class="control minimize"></div>
-                        <div class="control maximize"></div>
-                    </div>
-                </div>
-                <div class="text">Loading...</div>
-            </div>
+           
 
             <p>Welcome to our tech-focused learning portal.</p>
             <a href="#" class="main-btn">Explore Portal</a>
