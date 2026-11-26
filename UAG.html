@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCREDIBLE INDIA</title>
+    <style>
+        * {
+            font-family: Mozilla Headline VF, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+        }
+
+        .team-row {
+            margin: 10px 0;
+        }
+        input {
+            margin-right: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="C:\Users\Student\Documents\.css">
+</head>
+<body>
+
+    <div id="paisa">Paisa: ₹<span id='realPaisa'>1000</span></div>
+
+
+    <div class="team-row"><input type="number" id="input-1"><button data-input="input-1">CSK</button></div>
+    <div class="team-row"><input type="number" id="input-2"><button data-input="input-2">KKR</button></div>
+    <div class="team-row"><input type="number" id="input-3"><button data-input="input-3">MI</button></div>
+    <div class="team-row"><input type="number" id="input-4"><button data-input="input-4">RCB</button></div>
+    <div class="team-row"><input type="number" id="input-5"><button data-input="input-5">RR</button></div>
+    <div class="team-row"><input type="number" id="input-6"><button data-input="input-6">SRH</button></div>
+    <div class="team-row"><input type="number" id="input-7"><button data-input="input-7">DC</button></div>
+    <div class="team-row"><input type="number" id="input-8"><button data-input="input-8">PBKS</button></div>
+    <div class="team-row"><input type="number" id="input-9"><button data-input="input-9">LSG</button></div>
+    <div class="team-row"><input type="number" id="input-10"><button data-input="input-10">GT</button></div>
+
+<script>
+
+const realPaisaEl = document.querySelector('#realPaisa');
+
+
+document.querySelectorAll('.team-row button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Find the input field connected to this specific button
+        const inputId = button.getAttribute('data-input');
+        const inputEl = document.getElementById(inputId);
+        const betValue = Number(inputEl.value) || 0;
+
+        console.log(`Betting amount for ${button.innerText}:`, betValue);
+
+ 
+        
+
+      
+        if (Math.round(Math.random()) === 0) {
+            const currentPaisa = Number(realPaisaEl.innerText) || 0;
+            realPaisaEl.innerText = currentPaisa - betValue;
+            alert(`Lost! Remaining Paisa: ₹${realPaisaEl.innerText}`);
+        } else {
+ const currentPaisa = Number(realPaisaEl.innerText) || 0;
+            realPaisaEl.innerText = currentPaisa + betValue;
+            alert(`Won! Remaining Paisa: ₹${realPaisaEl.innerText}`);
+        }
+    });
+});
+</script>
+</body>
+</html>

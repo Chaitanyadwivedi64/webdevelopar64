@@ -1,0 +1,32 @@
+
+<html lang="en">
+<head>
+    <title>Menu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+#bar{
+align-self:start;
+justify-content:center
+}
+</style>
+</head>
+<body class="container-fluid bg-light">
+  <div class="container">
+    <header>
+      <h1>Our Menu</h1>
+      <p>Freshly prepared dishes with zero external dependencies</p>
+    </header>
+
+    <div class="bg-dark" id="bar">
+      <button class="btn-secondary-outline active" data-category="all">All</button>
+      <button class="btn-secondary-outline" data-category="starters">Starters</button>
+      <button class="btn-secondary-outline" data-category="mains">Mains</button>
+      <button class="btn-secondary-outline" data-category="desserts">Desserts</button>
+      <button class="btn-secondary-outline" data-category="drinks">Drinks</button>
+    </div>
+
+    <main class="menu-grid" id="menu-grid"></main>
+  </div>
+    
+</body>
+</html>
